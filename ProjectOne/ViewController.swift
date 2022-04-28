@@ -7,10 +7,12 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UITableViewController {
 
+    //MARK: - Properties
     var pictures = [String]()
 
+    //MARK: - ViewController
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -26,5 +28,19 @@ class ViewController: UIViewController {
         print(pictures)
     }
 
+    //MARK: - Methods
+
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        pictures.count
+    }
+
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Picture", for: indexPath)
+        cell.textLabel?.text = pictures[indexPath.row]
+        return cell
+    }
+
 }
+
+
 
