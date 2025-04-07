@@ -16,7 +16,7 @@ class ViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        title = "Storm"
+        title = "Storm Viewer"
         navigationController?.navigationBar.prefersLargeTitles = true
 
         let fm = FileManager.default
